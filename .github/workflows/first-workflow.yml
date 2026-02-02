@@ -7,9 +7,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Running the single command
-        run : echo "Welcome to github"
+        run: echo "Welcome to github"
       - name: version check
-        run : cat /etc/os-release
+        run: cat /etc/os-release
   job2:
     name: job2
     runs-on: ubuntu-latest
@@ -18,6 +18,6 @@ jobs:
         run: hostname -f
       - name: multiple runs
         run: |
-            echo: "Hello This is Arun"
-            echo: "Welcome to Github Actions"
-            sleep: 20 
+            echo "Hello This is Arun"
+            echo "Welcome to Github Actions"
+            sleep 20 
