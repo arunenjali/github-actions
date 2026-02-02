@@ -21,3 +21,20 @@ jobs:
             echo "Hello This is Arun"
             echo "Welcome to Github Actions"
             sleep 20 
+  job3:
+      name: job3
+      needs: job1
+      runs-on: ubuntu-latest
+      steps:
+        - name: checking the working directory
+          run: pwd
+        - name: list of files
+          run: ls -ltr
+  
+  job4:
+      name: job4
+      needs: [job1,job2,job3]
+      runs-on: ubuntu-latest
+      steps:
+        - name: sleep
+          run: sleep 20
