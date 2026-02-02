@@ -4,9 +4,9 @@ on: push
 jobs:
   job1:
     name: job1
-    runs-on: ubuntu-lates
+    runs-on: ubuntu-latest
     steps:
       - name: Running the single command
-        run: : echo "Welcome to github"
+        run : echo "Welcome to github"
       - name: version check
         run : cat /etc/os-release
