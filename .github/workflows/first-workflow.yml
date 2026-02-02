@@ -10,3 +10,14 @@ jobs:
         run : echo "Welcome to github"
       - name: version check
         run : cat /etc/os-release
+  job2:
+    name: job2
+    runs-on: ubuntu-latest
+    steps:
+      - name: hostname checking
+        run: hostname -f
+      - name: multiple runs
+        run: |
+            echo: "Hello This is Arun"
+            echo: "Welcome to Github Actions"
+            sleep: 20 
