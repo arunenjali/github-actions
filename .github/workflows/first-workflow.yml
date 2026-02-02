@@ -1,2 +1,12 @@
 name: first-workflow
 on: push
+
+jobs:
+  job1:
+    name: job1
+    runs-on: ubuntu-lates
+    steps:
+      - name: Running the single command
+        run: : echo "Welcome to github"
+      - name: version check
+        run : cat /etc/os-release
