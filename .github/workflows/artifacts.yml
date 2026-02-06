@@ -1,0 +1,55 @@
+name: artifact-full-demo
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build:
+    name: Build Job
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Create build artifact
+        run: |
+          echo "Application Version: 1.0" > app.txt
+          echo "Build Time: $(date)" >> app.txt
+
+      - name: Upload build artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: app-build
+          path: app.txt
+
+  test:
+    name: Test Job
+    needs: build
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Download build artifact
+        uses: actions/download-artifact@v4
+        with:
+          name: app-build
+
+      - name: Test artifact
+        run: |
+          echo "Testing artifact..."
+          cat app.txt
+
+  deploy:
+    name: Deploy Job
+    needs: test
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Download build artifact
+        uses: actions/download-artifact@v4
+        with:
+          name: app-build
+
+      - name: Deploy artifact
+        run: |
+          echo "Deploying application..."
+          cat app.txt
