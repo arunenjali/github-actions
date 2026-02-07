@@ -57,3 +57,5 @@ jobs:
         run: |
           echo "Deploying application..."
           cat app.txt
+      - name: failing the PR request
+        run: exit 1
