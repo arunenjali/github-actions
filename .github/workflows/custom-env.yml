@@ -4,6 +4,7 @@ on:
   
 env:
   DAY_OF_WEEK: Techday
+  DAY_OF_MONTH: APRIL
   testvar: value-global
 
 jobs: 
@@ -24,3 +25,12 @@ jobs:
       env:
            First_Name: Subscribers
            testvar: value-step
+    - name: print-values-of-env-vars-new
+      run: |
+        echo "$Greeting $First_Name. Today is $DAY_OF_MONTH!"
+        echo "testvar  $testvar"
+        echo "testvar  ${{ env.testvar }}"
+      env:
+           First_Name: Arun
+           testvar: value-step
+    
