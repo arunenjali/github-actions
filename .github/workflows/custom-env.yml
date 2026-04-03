@@ -23,14 +23,14 @@ jobs:
         echo "testvar  $testvar"
         echo "testvar  ${{ env.testvar }}"
       env:
-           First_Name: Subscribers
+           First_Name: Arun
            testvar: value-step
     - name: print-values-of-env-vars-new
       run: |
-        echo "$Greeting $First_Name. Today is $DAY_OF_MONTH!"
+        echo "$Greeting $Last_Name. Month is $DAY_OF_MONTH!"
         echo "testvar  $testvar"
         echo "testvar  ${{ env.testvar }}"
       env:
-           First_Name: Arun
+           Last_Name: Enjali
            testvar: value-step
     
