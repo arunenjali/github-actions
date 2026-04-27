@@ -4,7 +4,9 @@ on:
   push:
     branches:
       - main
-
+  pull_request:
+    branches:
+      - main
 jobs:
   build:
     name: Build Job
@@ -53,3 +55,5 @@ jobs:
         run: |
           echo "Deploying application..."
           cat app.txt
+      - name: failing the PR request
+        run: exit 0
